@@ -1,6 +1,7 @@
 
 
-<mat-card >
+<!-- <mat-card > -->
+<mat-card class="lo" *ngFor="let heroe of heroe">
     <mat-card-header>
         <mat-card-title>{{ heroe.superhero }}</mat-card-title>
         <mat-card-subtitle>{{ heroe.alter_ego }}</mat-card-subtitle>
@@ -22,7 +23,7 @@
     <mat-card-actions>
         <button mat-button
                 color="warn"
-                [routerLink]="['/heroes', heroe.id]">
+                [routerLink]="['/heroe', heroe.id]">
             Leer mas...
         </button>
         <button mat-button

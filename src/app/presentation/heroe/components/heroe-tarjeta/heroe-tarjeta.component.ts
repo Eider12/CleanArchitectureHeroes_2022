@@ -8,7 +8,8 @@ import { Heroe } from 'src/app/core/domain/Heroes/heroes.model';
 })
 export class HeroeTarjetaComponent implements OnInit {
 
-  @Input() heroe!: Heroe;
+  // @Input() heroe!: Heroe;
+  @Input() heroe: Heroe[] = [];
 
   constructor() { }
 

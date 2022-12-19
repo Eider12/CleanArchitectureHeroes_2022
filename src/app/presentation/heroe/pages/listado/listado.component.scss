@@ -1,0 +1,12 @@
+.prueba {
+    display: flex;
+    flex-direction: row;
+    margin-inline: 90px;
+    
+    //gap: 10px;
+    //flex-flow: row wrap;
+    
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+

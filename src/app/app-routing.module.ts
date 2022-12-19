@@ -11,13 +11,6 @@ const routes: Routes = [
   // {
   //   path: 'auth',
   //   loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule),
-    
-  // },
-  // {
-  //   path: 'heroes',
-  //   loadChildren: () => import('./heroes/heroes.module').then( m => m.HeroesModule),
-  //   // canLoad: [ AuthGuard ],
-  //   // canActivate: [ AuthGuard ]
   // },
   {
     path: 'heroe',
@@ -31,7 +24,6 @@ const routes: Routes = [
   },
   {
     path: '**',
-    // component: ErrorPageComponent
     redirectTo: '404'
   }
 ]
