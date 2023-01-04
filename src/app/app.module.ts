@@ -7,8 +7,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HeroesRepository } from './core/repositories/heroes.repositories';
-import { HeroeService } from './data/repository/heroe/heroe.service';
+import { HeroesRepository } from './domain/repositories/heroes.repositories';
+// import { HeroesRepository } from './core/repositories/heroes.repositories';
+// import { HeroeService } from './data/repository/heroe/heroe.service';
 
 @NgModule({
   declarations: [
@@ -21,9 +22,10 @@ import { HeroeService } from './data/repository/heroe/heroe.service';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [{
-    provide: HeroesRepository, useClass: HeroeService
-  }],
+  // providers: [{
+  //   provide: HeroesRepository, useClass: HeroeService
+  // }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

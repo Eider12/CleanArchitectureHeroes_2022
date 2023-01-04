@@ -1,6 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Heroe } from 'src/app/core/domain/Heroes/heroes.model';
+import { Heroe } from '../../../../domain/models/Heroes/heroes.model';
+// import { Heroe } from 'src/app/core/domain/Heroes/heroes.model';
+
 
 @Component({
   selector: 'app-confirmar',

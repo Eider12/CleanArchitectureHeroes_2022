@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
-import { BuscarHeroeUseCase } from 'src/app/core/usecases/buscar-heroe.usecase';
-import { GetHeroePorIdUseCase } from 'src/app/core/usecases/get-heroe-por-id.usecase';
-import { Heroe } from 'src/app/core/domain/Heroes/heroes.model';
+import { BuscarHeroeUseCase } from '../../../../domain/usecases/buscar-heroe.usecase';
+import { GetHeroePorIdUseCase } from '../../../../domain/usecases/get-heroe-por-id.usecase';
+import { Heroe } from '../../../../domain/models/Heroes/heroes.model';
+// import { BuscarHeroeUseCase } from 'src/app/core/usecases/buscar-heroe.usecase';
+// import { GetHeroePorIdUseCase } from 'src/app/core/usecases/get-heroe-por-id.usecase';
+// import { Heroe } from 'src/app/core/domain/Heroes/heroes.model';
 
 @Component({
   selector: 'app-buscar',

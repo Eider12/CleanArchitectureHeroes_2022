@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { GetHeroesUseCase } from 'src/app/core/usecases/get-heroes.usecase';
-import { Heroe } from '../../../../core/domain/Heroes/heroes.model';
+import { GetHeroesUseCase } from '../../../../domain/usecases/get-heroes.usecase'
+import { Heroe } from '../../../../domain/models/Heroes/heroes.model'
+// import { GetHeroesUseCase } from 'src/app/core/usecases/get-heroes.usecase';
+// import { Heroe } from '../../../../core/domain/Heroes/heroes.model';
 
 @Component({
   selector: 'app-listado',
@@ -14,6 +16,8 @@ export class ListadoComponent implements OnInit {
   constructor( private getHeroesUseCase: GetHeroesUseCase) { }
 
   ngOnInit(): void {
+    console.log('1');
+    
     this.getHeroesUseCase.execute()
         .subscribe((value: Heroe[]) => {
           console.log(value);

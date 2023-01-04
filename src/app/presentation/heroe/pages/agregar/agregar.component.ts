@@ -3,12 +3,19 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
-import { Publisher } from 'src/app/core/domain/Publisher/publisher.model';
-import { ActualizarHeroeUseCase } from 'src/app/core/usecases/actualizar-heroe.usecase';
-import { AddHeroeUseCase } from 'src/app/core/usecases/add-heroe.usecase';
-import { DeleteHeroeUseCase } from 'src/app/core/usecases/delete-heroe.usecase';
-import { GetHeroePorIdUseCase } from 'src/app/core/usecases/get-heroe-por-id.usecase';
-import { Heroe } from '../../../../core/domain/Heroes/heroes.model';
+import { Publisher } from '../../../../domain/models/Publisher/publisher.model';
+import { ActualizarHeroeUseCase } from '../../../../domain/usecases/actualizar-heroe.usecase';
+import { AddHeroeUseCase } from '../../../../domain/usecases/add-heroe.usecase';
+import { DeleteHeroeUseCase } from '../../../../domain/usecases/delete-heroe.usecase';
+import { GetHeroePorIdUseCase } from '../../../../domain/usecases/get-heroe-por-id.usecase';
+import { Heroe } from '../../../../domain/models/Heroes/heroes.model';
+
+// import { Publisher } from 'src/app/core/domain/Publisher/publisher.model';
+// import { ActualizarHeroeUseCase } from 'src/app/core/usecases/actualizar-heroe.usecase';
+// import { AddHeroeUseCase } from 'src/app/core/usecases/add-heroe.usecase';
+// import { DeleteHeroeUseCase } from 'src/app/core/usecases/delete-heroe.usecase';
+// import { GetHeroePorIdUseCase } from 'src/app/core/usecases/get-heroe-por-id.usecase';
+// import { Heroe } from '../../../../core/domain/Heroes/heroes.model';
 import { ConfirmarComponent } from '../../components/confirmar/confirmar.component';
 
 @Component({
