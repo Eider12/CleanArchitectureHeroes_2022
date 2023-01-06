@@ -24,12 +24,14 @@ import { DeleteHeroeUseCase } from 'src/app/domain/usecases/delete-heroe.usecase
 
 
 
-const getHeroesUseCaseFactory = (heroeRepo: HeroesRepository) => new GetHeroesUseCase(heroeRepo);
-export const getHeroesUseCaseProvider = {
-  provide: GetHeroesUseCase,
-  useFactory: getHeroesUseCaseFactory,
-  deps: [HeroesRepository],
-};
+// const getHeroesUseCaseFactory = (heroeRepo: HeroesRepository) => new GetHeroesUseCase(heroeRepo);
+// export const getHeroesUseCaseProvider = {
+//   provide: GetHeroesUseCase,
+//   useFactory: getHeroesUseCaseFactory,
+//   deps: [HeroesRepository],
+// };
+
+
 
 const getHeroePorIdUseCaseFactory = (heroeRepo: HeroesRepository) => new GetHeroePorIdUseCase(heroeRepo);
 export const getHeroePorIdUseCaseProvider = {
@@ -64,7 +66,16 @@ export const deleteHeroeUseCaseProvider = {
   provide: DeleteHeroeUseCase,
   useFactory: deleteHeroeUseCaseFactory,
   deps: [HeroesRepository],
-}
+};
+
+function getHeroesUseCaseFactory(heroeRepo: HeroesRepository) {
+  return new GetHeroesUseCase(heroeRepo);
+};
+export const getHeroesUseCaseProvider = {
+  provide: GetHeroesUseCase,
+  useFactory: getHeroesUseCaseFactory,
+  deps: [HeroesRepository],
+};
 
 @NgModule({
   declarations: [

@@ -17,8 +17,6 @@ export class GetHeroesUseCase implements UseCase<void, Heroe> {
     constructor( private heroesRepository:  HeroesRepository){}
 
     execute(params: void): Observable<Heroe[]> {
-        console.log('2');
-        
         return this.heroesRepository.getHeroes();
     }
 }

@@ -1,9 +1,10 @@
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Heroe } from '../../../domain/models/Heroes/heroes.model';
 import { HeroesRepository } from '../../../domain/repositories/heroes.repositories';
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { HeroeImplementationRepositoryMapper } from './mappers/heroe-repository.mapper';
 
 
 
@@ -16,7 +17,11 @@ import { HttpClient } from '@angular/common/http';
 
 export class HeroeImplementationRepository extends HeroesRepository {
 
+    // Url de API
     private baseUrl: string = 'http://localhost:3000';
+
+    // Mapeador
+    heroeMapper = new HeroeImplementationRepositoryMapper();
 
     constructor( private http: HttpClient) {
         super();
@@ -25,10 +30,18 @@ export class HeroeImplementationRepository extends HeroesRepository {
     getHeroes(): Observable<Heroe[]> {
         return this.http.get<Heroe[]>(`${ this.baseUrl }/heroes`);
     }
+
+    // getHeroePorId(id: string): Observable<Heroe> {
+    //     return this.http.get<Heroe>(`${ this.baseUrl }/heroes/${ id }`);
+    //     // throw new Error('Method not implemented.');
+    // }
+
     getHeroePorId(id: string): Observable<Heroe> {
-        return this.http.get<Heroe>(`${ this.baseUrl }/heroes/${ id }`);
-        // throw new Error('Method not implemented.');
+        return this.http
+                .get<Heroe>(`${ this.baseUrl }/heroes/${ id }`)
+                .pipe(map(this.heroeMapper.mapFrom));
     }
+
     getSugerencias(termino: string): Observable<Heroe[]> {
         return this.http.get<Heroe[]>(`${ this.baseUrl }/heroes?q=${ termino }&_limit=6`);
         // throw new Error('Method not implemented.');
